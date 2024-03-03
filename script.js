@@ -42,7 +42,6 @@ catch(error){
     row.append(col);
 }
 }
-
 displayData()
 container.append(title,row);
 document.body.append(container);
