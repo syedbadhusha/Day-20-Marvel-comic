@@ -13,7 +13,6 @@ title.innerHTML="MARVEL COMIC LIST"
 //////   Finction to fetch comic content link and display in collumn
 
 async function displayData(){
-    try{
     const fetchAPI = await fetch('http://gateway.marvel.com/v1/public/comics?ts=1&apikey=b099a8fa70d7ba1722757cfcb9e49b33&hash=dbfde17fe546abbea05365ad975024e7')
     const fetchAPIJson = await fetchAPI.json()
     var res = fetchAPIJson.data.results
@@ -33,14 +32,6 @@ async function displayData(){
             row.append(col);
         }
     }
-}
-catch(error){
-    var col = document.createElement('div')
-    col.className='col col-md-4';
-    col.id = 'comicContent';
-    col.innerHTML = error.name;
-    row.append(col);
-}
 }
 displayData()
 container.append(title,row);
